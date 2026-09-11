@@ -45,7 +45,7 @@ export const FinalListing: React.FC<FinalListingProps> = ({ onRestart }) => {
       <div className="cl-card overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* Image */}
-          <div style={{ background: 'var(--cl-ivory)', minHeight: 320, display: 'flex', alignItems: 'center', justifyCenter: 'center' }}>
+          <div style={{ background: 'var(--cl-ivory)', minHeight: 320, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             {product.imageUrl ? (
               <img
                 src={product.catalogueImageUrl || product.imageUrl}
