@@ -1,0 +1,369 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════
+   CRAFTLENS DESIGN SYSTEM — MODERN DARK HERITAGE (PROFESSIONAL CRAFT)
+   Palette: Dark Charcoal Espresso, Warm Charcoal Cards, Terracotta Bronze
+   Typography: Playfair Display (Headings) + Inter (UI/Body)
+═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Deep Dark Theme Surfaces ── */
+  --cl-espresso:      #0F0A07;   /* Ultra dark base background */
+  --cl-walnut:        #18110D;   /* Dark card background */
+  --cl-coffee:        #231913;   /* Secondary card / surface background */
+  
+  /* ── Background & Surfaces (Modern Dark App Palette) ── */
+  --cl-ivory:         #140E0A;   /* Primary dark canvas background */
+  --cl-cream:         #1F1611;   /* Muted dark card surface */
+  --cl-parchment:     #281E17;   /* Highlight dark card surface */
+  --cl-white:         #1C140F;   /* Main card surface (Dark Charcoal Brown) */
+
+  /* ── Accent & Highlights ── */
+  --cl-terra:         #C86D39;   /* Professional Warm Terracotta / Bronze Accent */
+  --cl-terra-dark:    #9E4F22;   /* Darker terracotta */
+  --cl-terra-light:   #E5874E;   /* Vibrant warm highlight */
+  --cl-terra-pale:    #2C1A10;   /* Subtle dark terracotta tint for active states */
+  --cl-terra-bg:      #26170E;   /* Soft dark highlight background */
+
+  /* ── Text Colors (High Contrast Light Text for Dark Mode) ── */
+  --cl-charcoal:      #F5ECE5;   /* Primary light text */
+  --cl-brown:         #E6D8CC;   /* Secondary bright body text */
+  --cl-gray:          #C5B7AC;   /* Body text */
+  --cl-gray-mid:      #9E8F83;   /* Muted labels & subtitles */
+  --cl-gray-light:    #73655A;   /* Placeholder & subtext */
+  --cl-gray-pale:     #382C23;   /* Dividers */
+
+  /* ── Semantic Colors (Adjusted for Dark Mode) ── */
+  --cl-success:       #48A366;   /* Bright rich green */
+  --cl-success-bg:    #122619;
+  --cl-warn:          #D9882B;   /* Bright warm amber warning */
+  --cl-warn-bg:       #2A1D0E;
+  --cl-border:        #33261D;   /* Dark clean border */
+  --cl-border-light:  #3D2E23;
+
+  /* ── Shadows (Glows for Dark Mode) ── */
+  --cl-shadow-sm:     0 2px 6px rgba(0, 0, 0, 0.4);
+  --cl-shadow-md:     0 6px 18px rgba(0, 0, 0, 0.5);
+  --cl-shadow-lg:     0 12px 36px rgba(0, 0, 0, 0.6);
+  --cl-shadow-terra:  0 4px 16px rgba(200, 109, 57, 0.25);
+}
+
+/* ══ Base Reset ═════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--cl-ivory);
+  color: var(--cl-charcoal);
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ══ Typography ═════════════════════════════════════════════════ */
+.cl-serif { font-family: 'Playfair Display', Georgia, serif; }
+
+.cl-display {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--cl-charcoal);
+}
+
+.cl-h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--cl-charcoal);
+}
+
+.cl-h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--cl-charcoal);
+}
+
+.cl-h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--cl-charcoal);
+  letter-spacing: -0.01em;
+}
+
+.cl-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  color: var(--cl-gray);
+  line-height: 1.65;
+}
+
+.cl-caption {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: var(--cl-gray-mid);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ══ Modern Cards (Dark Theme) ══════════════════════════════════ */
+.cl-card {
+  background: var(--cl-white);
+  border: 1px solid var(--cl-border);
+  border-radius: 12px;
+  box-shadow: var(--cl-shadow-sm);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.cl-card:hover {
+  box-shadow: var(--cl-shadow-md);
+  border-color: rgba(200, 109, 57, 0.4);
+}
+
+.cl-card-cream {
+  background: var(--cl-cream);
+  border: 1px solid var(--cl-border);
+  border-radius: 12px;
+}
+
+.cl-card-terra {
+  background: var(--cl-terra-bg);
+  border: 1px solid rgba(200, 109, 57, 0.3);
+  border-radius: 12px;
+}
+
+/* ══ Buttons (Sleek Dark Accent Finish) ═════════════════════════ */
+.cl-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: var(--cl-terra);
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 8px;
+  border: 1px solid var(--cl-terra-dark);
+  cursor: pointer;
+  transition: all 180ms ease;
+  box-shadow: var(--cl-shadow-terra);
+  white-space: nowrap;
+}
+
+.cl-btn-primary:hover {
+  background: var(--cl-terra-light);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(200, 109, 57, 0.35);
+}
+
+.cl-btn-primary:active { transform: translateY(0); }
+
+.cl-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--cl-cream);
+  color: var(--cl-charcoal);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 8px;
+  border: 1px solid var(--cl-border);
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.cl-btn-secondary:hover {
+  background: var(--cl-parchment);
+  border-color: var(--cl-gray-mid);
+  color: #FFFFFF;
+}
+
+.cl-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  background: transparent;
+  color: var(--cl-terra);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  border: 1px solid rgba(200, 109, 57, 0.35);
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.cl-btn-ghost:hover {
+  background: var(--cl-terra-pale);
+  border-color: var(--cl-terra);
+}
+
+/* ══ Badges ══════════════════════════════════════════════════════ */
+.cl-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cl-badge-terra {
+  background: var(--cl-terra-pale);
+  color: var(--cl-terra-light);
+  border: 1px solid rgba(200, 109, 57, 0.3);
+}
+
+.cl-badge-success {
+  background: var(--cl-success-bg);
+  color: var(--cl-success);
+  border: 1px solid rgba(72, 163, 102, 0.3);
+}
+
+.cl-badge-warn {
+  background: var(--cl-warn-bg);
+  color: var(--cl-warn);
+  border: 1px solid rgba(217, 136, 43, 0.3);
+}
+
+.cl-badge-neutral {
+  background: var(--cl-cream);
+  color: var(--cl-gray);
+  border: 1px solid var(--cl-border);
+}
+
+/* ══ Section Label ═══════════════════════════════════════════════ */
+.cl-section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cl-terra);
+}
+
+/* ══ Upload Zone ═════════════════════════════════════════════════ */
+.cl-upload-zone {
+  border: 1.5px dashed var(--cl-border);
+  border-radius: 12px;
+  background: var(--cl-espresso);
+  transition: all 180ms ease;
+  cursor: pointer;
+}
+
+.cl-upload-zone:hover,
+.cl-upload-zone.drag-over {
+  border-color: var(--cl-terra);
+  background: var(--cl-terra-pale);
+}
+
+/* ══ Input Fields ════════════════════════════════════════════════ */
+.cl-input {
+  width: 100%;
+  background: var(--cl-espresso);
+  border: 1px solid var(--cl-border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.9375rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--cl-charcoal);
+  transition: all 180ms ease;
+  outline: none;
+}
+
+.cl-input:focus {
+  border-color: var(--cl-terra);
+  box-shadow: 0 0 0 3px rgba(200, 109, 57, 0.2);
+}
+
+.cl-textarea {
+  width: 100%;
+  background: var(--cl-espresso);
+  border: 1px solid var(--cl-border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.9375rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--cl-charcoal);
+  transition: all 180ms ease;
+  outline: none;
+  resize: none;
+  line-height: 1.6;
+}
+
+.cl-textarea:focus {
+  border-color: var(--cl-terra);
+  box-shadow: 0 0 0 3px rgba(200, 109, 57, 0.2);
+}
+
+/* ══ Navbar ══════════════════════════════════════════════════════ */
+.cl-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--cl-espresso);
+  border-bottom: 1px solid var(--cl-border);
+}
+
+.cl-navbar.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* ══ Fact Row ════════════════════════════════════════════════════ */
+.cl-fact-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--cl-espresso);
+  border: 1px solid var(--cl-border);
+  border-radius: 8px;
+}
+
+/* ══ Clean Divider ═══════════════════════════════════════════════ */
+.cl-ornament-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--cl-gray-mid);
+}
+
+.cl-ornament-divider::before,
+.cl-ornament-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--cl-border);
+}
+
+/* ══ Container ═══════════════════════════════════════════════════ */
+.cl-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 640px) {
+  .cl-container { padding: 0 16px; }
+}
