@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 1b49c16057209dd4697e1274919ae6bf930b9329 Divyanattarayan <divyanattarayan.752@gmail.com> 1789148398 +0530	commit (initial): Initial commit: CraftLens application with UI/UX redesign
+1b49c16057209dd4697e1274919ae6bf930b9329 55874773a57b2c41420cfe77cbcffffb0780ca5b Divyanattarayan <divyanattarayan.752@gmail.com> 1789150851 +0530	commit: Configure frontend to communicate with deployed backend API URL
+55874773a57b2c41420cfe77cbcffffb0780ca5b ef8aec1e8aaf6dac8be26ca0183235233d5990be Divyanattarayan <divyanattarayan.752@gmail.com> 1789151020 +0530	commit: Add deployment blueprints for Render & Vercel
