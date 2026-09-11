@@ -1,0 +1,26 @@
+# Render deployment configuration for CraftLens
+services:
+  # Spring Boot Backend Web Service
+  - type: web
+    name: craftlens-backend
+    env: java
+    buildCommand: cd backend && ./mvnw clean package -DskipTests
+    startCommand: java -jar backend/target/craftlens-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: JAVA_VERSION
+        value: "21"
+      - key: GEMINI_API_KEY
+        sync: false
+
+  # React Frontend Static Site
+  - type: web
+    name: craftlens-frontend
+    env: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        fromService:
+          type: web
+          name: craftlens-backend
+          property: host
